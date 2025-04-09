@@ -1,0 +1,71 @@
+@startuml Petrol Pump Management System - Use Case Diagram
+
+' Define actors
+actor "Admin" as admin
+actor "Staff" as staff
+actor "Customer" as customer
+actor "Payment System" as payment
+actor "SMS Service" as sms
+
+' Define use cases
+rectangle "Petrol Pump Management System" {
+    ' Admin use cases
+    usecase "Manage Staff Accounts" as UC1
+    usecase "Update Fuel Prices" as UC2
+    usecase "Generate Reports" as UC3
+    usecase "Monitor System" as UC4
+    
+    ' Staff use cases
+    usecase "Process Transactions" as UC5
+    usecase "Check Fuel Levels" as UC6
+    usecase "Generate Receipts" as UC7
+    usecase "Update Customer Info" as UC8
+    
+    ' Customer use cases
+    usecase "View Fuel Prices" as UC9
+    usecase "Subscribe to Updates" as UC10
+    usecase "View Loyalty Points" as UC11
+    
+    ' System use cases
+    usecase "Process Payment" as UC12
+    usecase "Send Notifications" as UC13
+    usecase "Track Inventory" as UC14
+    usecase "Calculate Points" as UC15
+}
+
+' Define relationships
+' Admin relationships
+admin --> UC1
+admin --> UC2
+admin --> UC3
+admin --> UC4
+
+' Staff relationships
+staff --> UC5
+staff --> UC6
+staff --> UC7
+staff --> UC8
+
+' Customer relationships
+customer --> UC9
+customer --> UC10
+customer --> UC11
+
+' External system relationships
+payment --> UC12
+sms --> UC13
+
+' Include relationships
+UC5 ..> UC12 : <<include>>
+UC5 ..> UC7 : <<include>>
+UC5 ..> UC8 : <<include>>
+UC5 ..> UC14 : <<include>>
+UC5 ..> UC15 : <<include>>
+UC10 ..> UC13 : <<include>>
+UC2 ..> UC9 : <<include>>
+UC14 ..> UC6 : <<include>>
+
+' Extend relationships
+UC13 ..> UC10 : <<extend>>
+
+@enduml 

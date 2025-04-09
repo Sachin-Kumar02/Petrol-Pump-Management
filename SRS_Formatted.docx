@@ -1,0 +1,94 @@
+[Title Page]
+Software Requirements Specification (SRS)
+Petrol Pump Management System
+
+[Document Control]
+Document Version: 1.0
+Date: [Current Date]
+Author: System Developer
+Status: Draft
+
+[Table of Contents]
+1. Introduction
+2. System Overview
+3. Specific Requirements
+4. System Interfaces
+5. Data Requirements
+6. System Constraints
+7. Assumptions and Dependencies
+8. Future Enhancements
+9. Testing Requirements
+10. Documentation Requirements
+11. References
+12. Version History
+13. Appendices
+
+[Content]
+Software Requirements Specification (SRS)
+Petrol Pump Management System
+
+1. Introduction
+1.1 Purpose
+This document outlines the software requirements for the Petrol Pump Management System (PPMS), a web-based application designed to streamline and automate the operations of a petrol pump. The system aims to improve efficiency, accuracy, and customer service while maintaining proper records of transactions and inventory.
+
+1.2 Scope
+The PPMS encompasses all aspects of petrol pump operations including:
+• Fuel inventory management
+• Transaction processing
+• Customer management
+• Staff management
+• Price management
+• Reporting and analytics
+• Loyalty program management
+
+1.3 Intended Audience
+• Petrol pump owners and managers
+• System administrators
+• Pump attendants
+• Customers
+• Developers and maintenance personnel
+
+[Continue with the rest of the content...]
+
+[Formatting Instructions]
+1. Title Page:
+   - Title: 18pt, Arial, Bold, Center
+   - Subtitle: 16pt, Arial, Center
+   - Document Control: 12pt, Arial, Regular
+
+2. Headings:
+   - Level 1 (1., 2., 3.): 14pt, Arial, Bold
+   - Level 2 (1.1, 1.2): 12pt, Arial, Bold
+   - Level 3 (1.1.1, 1.1.2): 11pt, Arial, Bold
+
+3. Body Text:
+   - Font: Arial
+   - Size: 11pt
+   - Line Spacing: 1.15
+   - Paragraph Spacing: 6pt after
+
+4. Lists:
+   - Bullet Style: Round bullet (•)
+   - Indentation: 0.5 inch
+   - Spacing: 6pt before and after
+
+5. Tables:
+   - Style: Grid Table 4 - Accent 1
+   - Header Row: Bold
+   - Cell Padding: 6pt
+
+6. Page Setup:
+   - Margins: 1 inch all sides
+   - Header: "Petrol Pump Management System - SRS"
+   - Footer: Page numbers
+   - Orientation: Portrait
+
+7. Section Breaks:
+   - Add page breaks before major sections
+   - Keep related content together
+
+8. Additional Formatting:
+   - Add page numbers
+   - Include headers and footers
+   - Use consistent spacing
+   - Add section breaks where needed 

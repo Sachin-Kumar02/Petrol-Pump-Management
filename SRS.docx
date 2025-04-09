@@ -1,0 +1,227 @@
+Software Requirements Specification (SRS)
+Petrol Pump Management System
+
+1. Introduction
+1.1 Purpose
+This document outlines the software requirements for the Petrol Pump Management System (PPMS), a web-based application designed to streamline and automate the operations of a petrol pump. The system aims to improve efficiency, accuracy, and customer service while maintaining proper records of transactions and inventory.
+
+1.2 Scope
+The PPMS encompasses all aspects of petrol pump operations including:
+• Fuel inventory management
+• Transaction processing
+• Customer management
+• Staff management
+• Price management
+• Reporting and analytics
+• Loyalty program management
+
+1.3 Intended Audience
+• Petrol pump owners and managers
+• System administrators
+• Pump attendants
+• Customers
+• Developers and maintenance personnel
+
+2. System Overview
+2.1 System Description
+The PPMS is a web-based application built using HTML, CSS, and JavaScript. It provides a user-friendly interface for managing all aspects of petrol pump operations, from fuel dispensing to financial reporting.
+
+2.2 User Interface
+The system features a modern, responsive interface with:
+• Staff login system
+• Real-time fuel tank status monitoring
+• Transaction processing interface
+• Customer details management
+• Price management dashboard
+• Reporting and analytics section
+
+3. Specific Requirements
+3.1 Functional Requirements
+
+3.1.1 User Authentication
+• Staff login with username and password
+• Secure session management
+• Role-based access control
+
+3.1.2 Fuel Management
+• Real-time monitoring of fuel tank levels
+• Support for multiple fuel types (Petrol, Diesel, Premium)
+• Low fuel alerts and notifications
+• Tank capacity tracking (20,000L per tank)
+
+3.1.3 Transaction Processing
+• Fuel type selection
+• Quantity input
+• Price calculation
+• Multiple payment methods (Cash, Card, UPI)
+• Receipt generation
+• Transaction history tracking
+
+3.1.4 Customer Management
+• Customer details collection
+• Vehicle number tracking
+• Phone number management
+• Loyalty points system
+
+3.1.5 Price Management
+• Daily price updates
+• Price history tracking
+• Price change notifications
+• Price trend visualization
+
+3.1.6 Reporting
+• Daily sales reports
+• Transaction history
+• Fuel consumption analytics
+• Revenue tracking
+
+3.2 Non-Functional Requirements
+
+3.2.1 Performance
+• Real-time updates for fuel levels
+• Quick transaction processing
+• Responsive interface
+• Efficient data storage and retrieval
+
+3.2.2 Security
+• Secure login system
+• Data encryption
+• Access control
+• Transaction validation
+
+3.2.3 Reliability
+• Data backup
+• Error handling
+• System recovery
+• Transaction integrity
+
+3.2.4 Usability
+• Intuitive interface
+• Clear navigation
+• Responsive design
+• Mobile compatibility
+
+4. System Interfaces
+4.1 User Interfaces
+• Login screen
+• Main dashboard
+• Transaction interface
+• Reports interface
+• Settings interface
+
+4.2 Hardware Interfaces
+• Fuel dispensing units
+• Payment terminals
+• Receipt printers
+
+4.3 Software Interfaces
+• Database management system
+• Payment gateway integration
+• SMS notification system
+
+5. Data Requirements
+5.1 Data Entities
+• Customer information
+• Transaction records
+• Fuel inventory
+• Staff details
+• Price history
+• Loyalty points
+
+5.2 Data Storage
+• Local storage for temporary data
+• Database for permanent storage
+• Backup systems
+
+6. System Constraints
+6.1 Technical Constraints
+• Web browser compatibility
+• Internet connectivity requirements
+• Hardware requirements
+• Software dependencies
+
+6.2 Business Constraints
+• Regulatory compliance
+• Operating hours
+• Pricing policies
+• Customer privacy
+
+7. Assumptions and Dependencies
+7.1 Assumptions
+• Stable internet connectivity
+• Reliable power supply
+• Trained staff
+• Regular maintenance
+
+7.2 Dependencies
+• Web browser
+• Internet connection
+• Database system
+• Payment gateway
+• SMS service provider
+
+8. Future Enhancements
+8.1 Planned Features
+• Mobile application
+• Online payment integration
+• Customer feedback system
+• Advanced analytics
+• Inventory forecasting
+• Staff performance tracking
+
+9. Testing Requirements
+9.1 Testing Types
+• Unit testing
+• Integration testing
+• System testing
+• User acceptance testing
+
+9.2 Test Cases
+• Login functionality
+• Transaction processing
+• Price updates
+• Report generation
+• Data validation
+
+10. Documentation Requirements
+10.1 User Documentation
+• User manual
+• Training materials
+• Quick reference guide
+• Troubleshooting guide
+
+10.2 Technical Documentation
+• System architecture
+• Database schema
+• API documentation
+• Deployment guide
+
+11. References
+1. IEEE 830-1998: IEEE Recommended Practice for Software Requirements Specifications
+2. ISO/IEC 25010:2011: Systems and software engineering - Systems and software Quality Requirements and Evaluation
+3. Web Content Accessibility Guidelines (WCAG) 2.1
+4. Payment Card Industry Data Security Standard (PCI DSS)
+5. General Data Protection Regulation (GDPR)
+
+12. Version History
+Version	Date	Description	Author
+1.0	[Current Date]	Initial SRS document	System Developer
+
+13. Appendices
+Appendix A: System Architecture
+• Frontend: HTML5, CSS3, JavaScript
+• Backend: Node.js (planned)
+• Database: Local Storage (current), SQL (planned)
+
+Appendix B: Database Schema
+• Customer table
+• Transaction table
+• Inventory table
+• Staff table
+• Price history table
+
+Appendix C: API Documentation
+• Authentication endpoints
+• Transaction endpoints
+• Reporting endpoints
+• Management endpoints 

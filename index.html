@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Petrol Pump Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Login Section -->
+    <div class="login-container" id="loginSection">
+        <div class="login-form">
+            <h2>Staff Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="loginBtn">Login</button>
+        </div>
+    </div>
+
+    <!-- Main System Container -->
+    <div class="container" id="mainSystem" style="display: none;">
+        <h1>Petrol Pump Management System</h1>
+        
+        <!-- Tank Status -->
+        <div class="tank-status">
+            <h2>Fuel Tank Status</h2>
+            <div class="tank-meters">
+                <div class="tank">
+                    <label>Petrol</label>
+                    <div class="meter">
+                        <div id="petrolLevel" class="level"></div>
+                    </div>
+                    <span id="petrolCapacity">0/20000L</span>
+                </div>
+                <div class="tank">
+                    <label>Diesel</label>
+                    <div class="meter">
+                        <div id="dieselLevel" class="level"></div>
+                    </div>
+                    <span id="dieselCapacity">0/20000L</span>
+                </div>
+                <div class="tank">
+                    <label>Premium</label>
+                    <div class="meter">
+                        <div id="premiumLevel" class="level"></div>
+                    </div>
+                    <span id="premiumCapacity">0/20000L</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fuel Availability Notifications -->
+        <div class="notifications-panel">
+            <h2>Fuel Availability Status</h2>
+            <div class="notification-container">
+                <div id="notificationsList"></div>
+            </div>
+            
+            <!-- Live Status Board -->
+            <div class="live-status-board">
+                <h3>Live Fuel Status</h3>
+                <div class="status-cards">
+                    <div class="status-card" id="petrolStatus">
+                        <h4>Petrol</h4>
+                        <div class="status-indicator available"></div>
+                        <p class="availability-text">Available</p>
+                        <p class="stock-level">Stock: <span id="petrolStockLevel">15000L</span></p>
+                    </div>
+                    <div class="status-card" id="dieselStatus">
+                        <h4>Diesel</h4>
+                        <div class="status-indicator available"></div>
+                        <p class="availability-text">Available</p>
+                        <p class="stock-level">Stock: <span id="dieselStockLevel">18000L</span></p>
+                    </div>
+                    <div class="status-card" id="premiumStatus">
+                        <h4>Premium</h4>
+                        <div class="status-indicator available"></div>
+                        <p class="availability-text">Available</p>
+                        <p class="stock-level">Stock: <span id="premiumStockLevel">12000L</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subscribe for Notifications -->
+            <div class="notification-subscription">
+                <h3>Get Fuel Availability Updates</h3>
+                <div class="subscription-form">
+                    <input type="text" id="customerPhone" placeholder="Enter your phone number">
+                    <div class="fuel-type-checkboxes">
+                        <label>
+                            <input type="checkbox" value="petrol"> Petrol
+                        </label>
+                        <label>
+                            <input type="checkbox" value="diesel"> Diesel
+                        </label>
+                        <label>
+                            <input type="checkbox" value="premium"> Premium
+                        </label>
+                    </div>
+                    <button id="subscribeBtn">Subscribe for Updates</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fuel Price Updates Section -->
+        <div class="price-updates">
+            <h2>Daily Fuel Price Updates</h2>
+            
+            <!-- Admin Price Update Form -->
+            <div class="admin-controls">
+                <h3>Update Fuel Prices</h3>
+                <div class="price-update-form">
+                    <div class="input-group">
+                        <label for="newPetrolPrice">Petrol Price:</label>
+                        <input type="number" id="newPetrolPrice" step="0.01" placeholder="New Petrol Price">
+                    </div>
+                    <div class="input-group">
+                        <label for="newDieselPrice">Diesel Price:</label>
+                        <input type="number" id="newDieselPrice" step="0.01" placeholder="New Diesel Price">
+                    </div>
+                    <div class="input-group">
+                        <label for="newPremiumPrice">Premium Price:</label>
+                        <input type="number" id="newPremiumPrice" step="0.01" placeholder="New Premium Price">
+                    </div>
+                    <button id="updatePricesBtn">Update Prices</button>
+                </div>
+            </div>
+
+            <!-- Price History Chart -->
+            <div class="price-history">
+                <h3>Price History (Last 7 Days)</h3>
+                <canvas id="priceChart"></canvas>
+            </div>
+
+            <!-- Today's Prices -->
+            <div class="current-prices">
+                <h3>Today's Fuel Prices</h3>
+                <div class="price-cards">
+                    <div class="price-card">
+                        <h4>Petrol</h4>
+                        <p id="currentPetrolPrice">₹100.00</p>
+                        <span id="petrolPriceChange" class="price-change"></span>
+                    </div>
+                    <div class="price-card">
+                        <h4>Diesel</h4>
+                        <p id="currentDieselPrice">₹90.00</p>
+                        <span id="dieselPriceChange" class="price-change"></span>
+                    </div>
+                    <div class="price-card">
+                        <h4>Premium</h4>
+                        <p id="currentPremiumPrice">₹110.00</p>
+                        <span id="premiumPriceChange" class="price-change"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pump-system">
+            <div class="fuel-selection">
+                <h2>Select Fuel Type</h2>
+                <select id="fuelType">
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="premium">Premium Petrol</option>
+                </select>
+            </div>
+
+            <div class="quantity-input">
+                <h2>Enter Quantity (Liters)</h2>
+                <input type="number" id="quantity" min="1" step="0.01">
+            </div>
+
+            <!-- Customer Details -->
+            <div class="customer-details">
+                <h2>Customer Details</h2>
+                <input type="text" id="customerName" placeholder="Customer Name">
+                <input type="text" id="vehicleNumber" placeholder="Vehicle Number">
+                <input type="text" id="phoneNumber" placeholder="Phone Number">
+            </div>
+
+            <!-- Payment Method -->
+            <div class="payment-method">
+                <h2>Payment Method</h2>
+                <select id="paymentType">
+                    <option value="cash">Cash</option>
+                    <option value="card">Card</option>
+                    <option value="upi">UPI</option>
+                </select>
+            </div>
+
+            <div class="price-display">
+                <h2>Price per Liter</h2>
+                <p id="pricePerLiter">₹100.00</p>
+            </div>
+
+            <div class="total-amount">
+                <h2>Total Amount</h2>
+                <p id="totalAmount">₹0.00</p>
+            </div>
+
+            <!-- Loyalty Points -->
+            <div class="loyalty-points">
+                <h2>Loyalty Points</h2>
+                <p>Points Earned: <span id="pointsEarned">0</span></p>
+                <p>Total Points: <span id="totalPoints">0</span></p>
+            </div>
+
+            <button id="calculateBtn">Calculate</button>
+            <button id="generateReceiptBtn">Generate Receipt</button>
+            <button id="resetBtn">Reset</button>
+
+            <!-- Daily Sales Report -->
+            <div class="daily-report">
+                <h2>Daily Sales Report</h2>
+                <div class="report-summary">
+                    <p>Total Sales: ₹<span id="totalSales">0.00</span></p>
+                    <p>Total Liters: <span id="totalLiters">0.00</span>L</p>
+                    <p>Transactions: <span id="totalTransactions">0</span></p>
+                </div>
+            </div>
+
+            <div class="transaction-history">
+                <h2>Transaction History</h2>
+                <ul id="history"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Receipt Modal -->
+    <div id="receiptModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="receiptContent"></div>
+            <button id="printReceiptBtn">Print Receipt</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
